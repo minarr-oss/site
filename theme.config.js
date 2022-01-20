@@ -40,7 +40,7 @@ const FEEDBACK_LINK_WITH_TRANSLATIONS = {
 
 export default {
   projectLink: "https://github.com/zenohq",
-  docsRepositoryBase: "https://github.com/zenohq/site/blob/master/pages",
+  docsRepositoryBase: "https://github.com/zenohq/site/blob/main/pages",
   titleSuffix: " – Zeno",
   search: true,
   unstable_flexsearch: true,
