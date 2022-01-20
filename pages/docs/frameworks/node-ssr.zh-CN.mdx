@@ -1,0 +1,15 @@
+# Node SSR
+
+## 构建设置
+
+| 设置项 | 默认值 | 说明 |
+| :--- | :--- | :--- |
+| Root Directory | .（以仓库为工作路径） | 定义构建的工作路径 |
+| Build Command | npm build | 构建命令，可选择仓库中的脚本进行构建（如 `./hack/build.sh`） |
+
+## 运行时设置
+
+| 设置项 | 默认值 | 说明 |
+| :--- | :--- | :--- |
+| Start Command | pm2-runtime start npm -- start | 默认使用 PM2 启动，可选择仓库中脚本自行启动（如 `./hack/start.sh`）|
+| Service Port | 8080 | 服务监听的端口号 |

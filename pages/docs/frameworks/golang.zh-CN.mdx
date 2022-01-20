@@ -1,0 +1,21 @@
+# Golang
+
+## 构建设置
+
+| 设置项 | 默认值 | 说明 |
+| :--- | :--- | :--- |
+| Root Directory | .（以仓库为工作路径） | 定义构建的工作路径 |
+| Golang Project | GitHub 仓库路径（不包括 HTTP protocol，例如 github.com/zenohq/golang-example） | 该值为项目相对于 `$GOPATH/src/` 的路径 |
+| Build Command | CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build | 构建命令，可选择仓库中的脚本进行构建（如 `./hack/build.sh`） |
+
+## 运行时设置
+
+| 设置项 | 默认值 | 说明 |
+| :--- | :--- | :--- |
+| Start Command | GitHub 仓库名称（如 `golang-example`） | 默认情况下为编译文件的执行路径，如果需要额外启动参数可使用相对路径选择仓库中的脚本（如 `./hack/run.sh`） |
+| Service Port | 8080 | 最终提供服务的 HTTP 监听端口 |
+
+
+## 参考示例
+
+- [Zeno golang-mod](https://github.com/zenohq/example-apps/tree/main/golang-mod)

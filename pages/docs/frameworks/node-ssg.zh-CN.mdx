@@ -1,0 +1,13 @@
+# Node SSG
+
+## 构建设置
+
+| 设置项 | 默认值 | 说明 |
+| :--- | :--- | :--- |
+| Root Directory | .（以仓库为工作路径） | 定义构建的工作路径 |
+| Artifacts Directory| dist | 静态编译后的相对路径 |
+| Build Command | npm build | 构建命令，可选择仓库中的脚本进行构建（如 `./hack/build.sh`） |
+
+## 运行时设置
+
+在该模式下会开启 `try_files` 也就是说当访问 `https://demo.xvx.app/rocks` 会尝试返回 `<Artifacts Directory>/rocks/index.html` 中的内容。

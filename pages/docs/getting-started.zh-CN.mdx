@@ -1,0 +1,93 @@
+import Callout from "nextra-theme-docs/callout";
+
+# 入门
+
+<Callout emoji="💡">
+  Zeno 当前处于 Alpha 测试阶段，支持的框架和功能较为有限，各项功能正在超频开发中。
+</Callout>
+
+## 安装 Zeno CLI
+
+未来将提供包管理的形式安装和更新。
+
+### Linux
+
+```
+curl -LO "https://dl.neospaceindustries.com/zeno/cli/$(curl -L -s https://dl.neospaceindustries.com/zeno/cli/stable.txt)/zeno_linux_amd64"
+mv zeno_linux_amd64 /usr/local/bin/zeno && chmod +x /usr/local/bin/zeno
+```
+
+### macOS
+
+#### Intel
+
+```
+curl -LO "https://dl.neospaceindustries.com/zeno/cli/$(curl -L -s https://dl.neospaceindustries.com/zeno/cli/stable.txt)/zeno_darwin_amd64"
+mv zeno_darwin_amd64 /usr/local/bin/zeno && chmod +x /usr/local/bin/zeno
+```
+
+#### Apple Silicon
+
+```
+curl -LO "https://dl.neospaceindustries.com/zeno/cli/$(curl -L -s https://dl.neospaceindustries.com/zeno/cli/stable.txt)/zeno_darwin_arm64"
+mv zeno_darwin_arm64 /usr/local/bin/zeno && chmod +x /usr/local/bin/zeno
+```
+
+### Windows
+
+
+> 说明： 要想找到最新稳定的版本（例如：为了编写脚本），可以看看这里 `https://dl.neospaceindustries.com/zeno/cli/stable.txt`
+
+```
+curl.exe -sLO https://dl.neospaceindustries.com/zeno/cli/v0.0.3/zeno_windows_amd64.exe
+mkdir -p %USERPROFILE%\bin\
+copy zeno_windows_amd64.exe %USERPROFILE%\bin\zeno.exe
+set PATH=%USERPROFILE%\bin\;%PATH%
+```
+
+### 验证安装
+
+执行完成后可通过 `zeno version` 验证是否安装成功。
+
+
+## 注册与登录
+
+初次使用的用户，可以使用 `zeno login` 开始帐号注册流程，可以使用邮箱注册或第三方平台（如 GitHub、Google 等）。
+
+```
+~# zeno login
+Zeno CLI v1.00.86
+Please visit the following URL in your web browser:
+https://<i-am-the-login-url>
+
+ ▄ Waiting login to be completed (4s)
+```
+
+根据提示在浏览其中打开注册/登录的页面即可进行流程。登录后可以使用 `zeno whoami` 查看当前登录的用户
+
+```
+~# zeno whoami
+Zeno CLI v1.00.86
+Current login as Nobody(nobody@zeno.so)
+project limits: 1
+```
+
+> 注意：当前 Zeno 处于 Alpha 测试阶段，因此初始账号仅提供少量配额，如需更多配额请通过社群获取。
+
+## 账号关联
+
+**使用 GitHub 注册的用户可以忽略该步骤**
+
+当前 Zeno 集成了 GitHub 作为用户代码仓库，如果没有选择 GitHub 作为注册渠道的话，将需要使用 `zeno login link` 选择 GitHub 进行账号关联。
+关联后方可进行更多 GitHub 平台的操作。
+
+```
+~# zeno login link
+Zeno CLI v1.00.86
+✔ GitHub
+Connecting account Nobody(nobody@zeno.so) with GitHub
+```
+
+## 创建项目
+
+[![asciicast](https://asciinema.org/a/8vCAl9djCAOZ2LY8Qm6mvzewx.svg)](https://asciinema.org/a/8vCAl9djCAOZ2LY8Qm6mvzewx)
