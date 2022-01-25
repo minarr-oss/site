@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-
 import styles from "./features.module.css";
 
 const Feature = ({ text, icon, textStyle }) => (
@@ -17,14 +16,11 @@ const TITLE_WITH_TRANSLATIONS = {
 const FEATURES_WITH_TRANSLATIONS = {
   "zh-CN": {
     lightweight: "简单易用",
-    realtime: "快速集成",
-    suspense: "Suspense",
-    pagination: "Pagination",
-    backendAgnostic: "Backend Agnostic",
-    renderingStrategies: "SSR / SSG Ready",
-    typescript: "TypeScript Ready",
-    remoteLocal: "Remote + Local",
+    builds: "自动构建",
     multiLanguagesSupport: '多语言支持',
+    integrateWithRepository: '代码仓库集成',
+    autoScaling: '弹性伸缩',
+    metrics: '应用指标',
     more: '持续画饼中',
   },
 };
@@ -38,9 +34,6 @@ export default () => {
 
   return (
     <div className="mx-auto max-w-full w-[880px] text-center px-4 mb-10">
-      <p className="text-lg mb-2 text-gray-600 md:!text-2xl">
-        {TITLE_WITH_TRANSLATIONS[locale]}
-      </p>
       <div className={styles.features}>
         <Feature
           text={featureText("lightweight")}
@@ -62,7 +55,7 @@ export default () => {
           }
         />
         <Feature
-          text={featureText("realtime")}
+          text={featureText("integrateWithRepository")}
           icon={
             <svg
               width="24"
@@ -75,7 +68,8 @@ export default () => {
               shapeRendering="geometricPrecision"
               viewBox="0 0 24 24"
             >
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+              <path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"></path>
+              <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"></path>
             </svg>
           }
         />
@@ -98,6 +92,63 @@ export default () => {
           }
         />
         <Feature
+          text={featureText("builds")}
+          icon={
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              shapeRendering="geometricPrecision"
+              viewBox="0 0 24 24"
+            >
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+            </svg>
+          }
+        />
+        <Feature
+          text={featureText("autoScaling")}
+          textStyle={{ color: '#777' }}
+          icon={
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="#777"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              shapeRendering="geometricPrecision"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="2"></circle>
+              <path d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49m11.31-2.82a10 10 0 010 14.14m-14.14 0a10 10 0 010-14.14"></path>
+            </svg>
+          }
+        />
+        <Feature
+          text={featureText("metrics")}
+          textStyle={{ color: '#777' }}
+          icon={
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="#777"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              shapeRendering="geometricPrecision"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          }
+        />
+        <Feature
           text={featureText("more")}
           textStyle={{ color: '#777' }}
           icon={
@@ -105,7 +156,7 @@ export default () => {
               viewBox="0 0 24 24"
               width="24"
               height="24"
-              stroke="#777777"
+              stroke="#777"
               strokeWidth="2"
               fill="none"
               strokeLinecap="round"

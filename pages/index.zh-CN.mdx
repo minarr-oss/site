@@ -1,37 +1,40 @@
 ---
-title: 更轻松的分发应用
+title: 更轻松的应用分发方式
 ---
 
 import Features from "components/features"
+import Hero from "components/hero"
+
 import Bleed from 'nextra-theme-docs/bleed'
 
 {
 // wrapped with {} to mark it as javascript so mdx will not put it under a p tag
 }
-{<h1 className="text-center font-extrabold md:text-5xl mt-8">Zeno</h1>}
+
+<Bleed full>
+  <Hero />
+</Bleed>
 
 <Bleed full>
   <Features/>
 </Bleed>
 
-Zeno 是为快速交付打造的应用分发平台，通过代码仓库联动快速的迭代，让开发者专注于应用迭代减少对分发的负担。
+Zeno 是为快速交付打造的应用分发平台。通过简单几个步骤初始化并关联代码仓库，便可在 Zeno 快速的构建并分发你的应用。
 
 **专注迭代，剩下的交给 Zeno 🙌**
 
-[![asciicast](https://asciinema.org/a/8vCAl9djCAOZ2LY8Qm6mvzewx.svg)](https://asciinema.org/a/8vCAl9djCAOZ2LY8Qm6mvzewx)
+> Zeno 当前 Alpha 测试中，SLO 也就不到 100 个 9，所以你懂（适当把玩）
 
-<div className="mt-16 mb-20 ">
-## 接入步骤
+当前推荐部署的应用：
 
-1. 安装 Zeno CLI
-2. 注册账号或者登陆
-3. 将 Zeno GitHub App 集成到你的 GitHub 账号
-4. 在 Zeno 中创建一个新的项目
-5. 使用分配的域名访问服务
-6. （可选）绑定自定义域名并开始提供服务
+- 博客
+- NodeJS：如 SSG、SSR
+- 无状态 Golang 服务
 
-</div>
+更多类型的应用将逐步支持
 
 <div className="mt-16 mb-20 text-center">
   [马上开始](/docs/getting-started)
 </div>
+
+如果你喜欢 Zeno 欢迎加入我们的[社群](https://join.slack.com/t/nsi-comm/shared_invite/zt-10ui598zn-CE7gCONdMuD1gxKAZHyfyg)讨论
