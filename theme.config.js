@@ -47,7 +47,7 @@ const FEEDBACK_LINK_WITH_TRANSLATIONS = {
 };
 
 export default {
-  projectLink: "https://github.com/zenohq/example-apps",
+  projectLink: false,
   docsRepositoryBase: "https://github.com/zenohq/site/blob/main/pages",
   titleSuffix: " – Zeno",
   search: true,
@@ -154,7 +154,7 @@ export default {
             <span className="mr-2">
               <NSI />
             </span>
-            <span className="text-xs font-mono font-thin">© Blackhole Inc.</span>
+            <span className="text-xs font-normal">© Blackhole Inc.</span>
           </a>
         );
     }
