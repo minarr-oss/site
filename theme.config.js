@@ -15,6 +15,14 @@ const Logo = ({ height }) => (
   </svg>
 );
 
+const NSI = ({ height = 22 }) => (
+  <svg height={height} viewBox="0 0 178.8 72.001">
+    <g fillRule="evenodd" fontSize="9pt" fill="currentColor">
+      <path d="M 140.2 72 L 97.8 72 Q 93.8 72 90.4 70 Q 87 68 85 64.6 Q 83 61.2 83 57.2 L 83 50.5 L 98.5 50.5 L 98.5 56.4 L 139.3 56.4 L 139.3 43.8 L 97.8 43.8 Q 93.8 43.8 90.4 41.8 Q 87 39.8 85 36.45 Q 83 33.1 83 29 L 83 14.8 Q 83 10.7 85 7.35 Q 87 4 90.4 2 Q 93.8 0 97.8 0 L 140.2 0 Q 144.2 0 147.55 2 Q 150.9 4 152.95 7.35 Q 155 10.7 155 14.8 L 155 21.5 L 139.3 21.5 L 139.3 15.6 L 98.5 15.6 L 98.5 28.2 L 140.2 28.2 Q 144.2 28.2 147.55 30.2 Q 150.9 32.2 152.95 35.55 Q 155 38.9 155 43 L 155 57.2 Q 155 61.2 152.95 64.6 Q 150.9 68 147.55 70 Q 144.2 72 140.2 72 Z M 15.5 72 L 0 72 L 0 0 L 16 0 L 56.3 48 L 56.3 0 L 72 0 L 72 72 L 56 72 L 15.5 23.8 L 15.5 72 Z M 178.8 72 L 163.5 72 L 163.5 0 L 178.8 0 L 178.8 72 Z" vectorEffect="non-scaling-stroke" />
+    </g>
+  </svg>
+);
+
 const Zeno = ({ height = 20 }) => (
   <svg height={height} viewBox="0 0 989.000000 309.000000" fill="none">
     <g transform="translate(0.000000,309.000000) scale(0.100000,-0.100000)"
@@ -135,33 +143,18 @@ export default {
   },
   footerText: ({ locale }) => {
     switch (locale) {
-      case "zh-CN":
-        return (
-          <a
-            href="https://zeno.so"
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center no-underline text-current font-semibold"
-          >
-            <span className="mr-2">由</span>
-            <span className="mr-2">
-              <Zeno />
-            </span>
-            驱动
-          </a>
-        );
       default:
         return (
           <a
-            href="https://zeno.so"
+            href="https://neospaceindustries.com/"
             target="_blank"
             rel="noopener"
             className="inline-flex items-center no-underline text-current font-semibold"
           >
-            <span className="mr-1">Powered by</span>
-            <span>
-              <Zeno />
+            <span className="mr-2">
+              <NSI />
             </span>
+            <span className="text-xs font-mono font-thin">© Blackhole Inc.</span>
           </a>
         );
     }
