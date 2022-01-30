@@ -1,0 +1,48 @@
+import Callout from "nextra-theme-docs/callout";
+
+# 自定义域名
+
+默认情况下，每个项目都会分配到一个 `*.xvx.app` 的域名。可以将其替换为自定义域名或者其他可用的 `*.xvx.app` 域名。
+
+## 添加域名
+
+<Callout>
+域名解析增改将需要一定时间生效，生效后 Zeno 将自动进行 TLS 证书签发，在期间使用新域名访问 Zeno 上的应用可能出现证书受信问题。
+</Callout>
+
+如果没有自己的域名，可以前往例如 Cloudflare、腾讯云、阿里云等购买。如果已有可用域名，请跟随以下操作。
+
+1. 选择你想要添加域名的项目
+
+```
+$ zeno ls
+project                 framework       revision        state   rev.age
+acme                	NodeJS SSR	    33c47f4 	    Ready	2h
+```
+
+2. 添加自定义域名到该项目中
+
+```
+$ zeno create domain acme
+✔ Type the domain your wanna bind to project acme: my-domain.com█
+```
+
+3. 配置域名 DNS
+
+```
+$ zeno ls domain acme
+
+Please make sure your self-managed domain below has correct DNS CNAME record with value <ELB CNAME>.
+Depending on your provider, it might take some time for the changes to take effect. Then you can visit by your own domain.
+
+Use [zeno create domain <project name>] or [zeno edit domain <project name> <domain name>] to manage your domain(s).
+
+
+domain          	state    	updated
+xxxxxxxx.xvx.app	validated	2021-11-17 15:29:33 +0800 CST
+my-domain.com     	validated	2022-01-03 15:23:35 +0800 CST
+```
+
+参照右上方的 `ELB CNAME` 前往域名所使用 DNS 服务商，添加解析记录。
+
+> Zeno 尚不提供 Anycast IP 接入，部分 NS 不支持在根域名（Apex domain）中使用 CNAME 记录将受影响。

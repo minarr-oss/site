@@ -1,6 +1,7 @@
 {
   "getting-started": "入门",
-  "frameworks": "框架",
+  "project": "应用",
+  "framework": "框架",
   "cli": "CLI",
   "database": "数据库",
   "faq": "常见问题",
