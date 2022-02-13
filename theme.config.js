@@ -130,6 +130,9 @@ export default {
           media="print"
           onLoad="this.media='all'"
         />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZD10FSL31"></script>
+        <script src="/analytics.js"></script>
       </>
     );
   },
