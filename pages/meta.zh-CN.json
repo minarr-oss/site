@@ -15,5 +15,9 @@
   "blog": {
     "title": "博客",
     "type": "nav"
+  },
+  "community": {
+    "title": "社区",
+    "type": "nav"
   }
 }
