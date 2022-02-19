@@ -1,0 +1,28 @@
+---
+---
+
+# 部署 Jekyll 应用
+
+[Jekyll](https://jekyllrb.com) 是一个简单的静态网站生成器，用于生成个人，项目或组织的网站。本文将以 [examples/hugo](https://github.com/zenohq/examples/tree/main/hugo) 作为示例进行部署。
+
+## 开始创建
+
+使用 `zeno create` 创建新应用，选择 `zenohq/examples`（此为 Zeno 的示例仓库，你可以 fork 后进行创建，也可完全使用自己的新代码仓库）作为代码仓库，而后选择使用 `Jekyll` 方式进行部署。
+
+接下来会遇到唯一一个配置项：
+
+- Root Directory 工作目录：由于 examples 是一个 monorepo 所以创建时填写的 RootDirectory 是 `jekyll`。实际使用过程中，如果你根目录即为应用内容那么使用默认值（根目录）即可。
+
+填写完毕后提交创建即可。大致流程如下
+
+
+```
+$ zeno create                
+✔ zenohq / Zeno
+✔ examples
+Selected repository zenohq/examples to create new project
+Name your new project: example-jekyll
+✔ Jekyll / Jekyll build and served by Nginx
+Root Directory: jekyll
+Project created, with name `example-jekyll` 
+```

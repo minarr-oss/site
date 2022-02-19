@@ -1,4 +1,5 @@
 {
+  "jekyll": "部署 Jekyll 应用",
   "nextjs": "部署 Next.js 应用",
   "vuejs3": "部署 Vue.js 3 应用",
   "hugo": "部署 Hugo 应用",
