@@ -1,0 +1,35 @@
+---
+---
+
+# 部署 Hexo 应用
+
+[Hexo](https://hexo.io) 是一款快速、简洁且高效的博客框架，通过渲染的方式将你的博客渲染成无数个静态页面。
+
+本文将以 [examples/hexo](https://github.com/zenohq/examples/tree/main/hexo) 作为示例进行部署。
+
+Hexo 的部署方式是通过预编译后生成静态文件托管，所以将使用 Zeno 提供的 [Node.js 服务端生成](/docs/framework/node-ssg) 框架进行部署。
+
+## 开始创建
+
+使用 `zeno create` 创建新应用，选择 `zenohq/examples`（此为 Zeno 的示例仓库，你可以 fork 后进行创建，也可完全使用自己的新代码仓库）作为代码仓库，而后选择使用 `NodeJS SSG` 进行部署。
+
+接下来会遇到两个配置分配是：
+
+- Root Directory 工作目录：由于 examples 是一个 monorepo 所以创建时填写的 RootDirectory 是 `hexo`。实际使用过程中，如果你根目录即为应用内容那么使用默认值即可。
+- Build Command 构建命令：此处使用 `npm run build` 最终调用到 `package.json` 中 `build` 的命令（默认情况下等价于 `hexo generate`）
+
+填写完毕后提交创建即可。大致流程如下
+
+
+```
+$ zeno create
+✔ zenohq / Zeno
+✔ examples
+Selected repository zenohq/examples to create new project
+Name your new project: example-hexo
+✔ NodeJS SSG / NodeJS Server-Side Generate
+Root Directory: ./hexo
+Build Command: npm run build
+Artifacts Directory: public
+Project created, with name `example-hexo` 
+```

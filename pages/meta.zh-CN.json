@@ -8,6 +8,10 @@
     "title": "文档",
     "type": "nav"
   },
+  "guides": {
+    "title": "接入指南",
+    "type": "nav"
+  },
   "changelog": {
     "title": "更新日志",
     "type": "nav"
