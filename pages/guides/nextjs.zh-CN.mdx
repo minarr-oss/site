@@ -1,0 +1,36 @@
+---
+---
+
+# 部署 Next.js 应用
+
+[Next.js](https://nextjs.org) 为您提供生产环境所需的所有功能以及最佳的开发体验：包括静态及服务器端融合渲染、 支持 TypeScript、智能化打包、 路由预取等功能 无需任何配置。
+
+本文将以 [examples/nextjs](https://github.com/zenohq/examples/tree/main/nextjs) 作为示例进行部署。
+
+本文以 SSR（请求时渲染页面/服务端渲染）的方式进行示例，因此选择 Zeno 提供的 [Node.js 服务端渲染](/docs/framework/node-ssr) 进行部署
+
+## 开始创建
+
+使用 `zeno create` 创建新应用，选择 `zenohq/examples`（此为 Zeno 的示例仓库，你可以 fork 后进行创建，也可完全使用自己的新代码仓库）作为代码仓库，而后选择使用 `NodeJS SSR`。
+
+将有以下几个配置项需要设定：
+
+- Root Directory 工作目录：由于 examples 是一个 monorepo 所以创建时填写的 RootDirectory 是 `nextjs`。实际使用过程中，如果你根目录即为应用内容那么使用默认值即可。
+- Build Command 构建命令：此处使用 `npm run build`，如果你的项目使用 yarn，则使用 `yarn build` 等等。
+- Start Command 启动命令：默认情况下使用 pm2 对应用进行管理，你也可以选择安装并使用其他方式。
+- Service Port 应用监听端口：Next.js 的应用默认是 3000，如果你的启动时有改变则需随之变更。
+
+填写完毕后提交创建即可。大致流程如下
+
+
+```
+$ zeno create
+✔ zenohq / Zeno
+✔ examples
+Selected repository zenohq/examples to create new project
+Name your new project: example-nextjs
+✔ NodeJS SSR / NodeJS Server-Side Render
+Root Directory: nextjs
+Build Command: npm run build
+Project created, with name `example-nextjs` 
+```
