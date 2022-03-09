@@ -17,7 +17,7 @@ export default function Hero() {
                             <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                                 <a
                                     href="/docs/getting-started"
-                                    className="block w-64 rounded-md border border-transparent px-5 py-3 bg-black text-base font-medium text-white shadow hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 sm:px-10"
+                                    className="block w-64 rounded-md border border-transparent px-5 py-3 bg-black text-base font-medium text-white shadow hover:bg-gray-700 focus:outline-none sm:px-10"
                                 >
                                     即刻使用
                                 </a>
