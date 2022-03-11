@@ -1,27 +1,27 @@
 {
   "index": {
     "title": "简介",
-    "type": "nav",
+    "type": "page",
     "hidden": true
   },
   "docs": {
     "title": "文档",
-    "type": "nav"
+    "type": "page"
   },
   "guides": {
     "title": "接入指南",
-    "type": "nav"
+    "type": "page"
   },
   "changelog": {
     "title": "更新日志",
-    "type": "nav"
+    "type": "page"
   },
   "blog": {
     "title": "博客",
-    "type": "nav"
+    "type": "page"
   },
   "community": {
     "title": "社区",
-    "type": "nav"
+    "type": "page"
   }
 }
