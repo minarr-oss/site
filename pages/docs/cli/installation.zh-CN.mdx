@@ -1,0 +1,92 @@
+# 安装与设置
+
+> 未来将提供包管理的形式提供便捷的安装和更新。
+
+## 安装
+
+### Linux
+
+```
+curl -LO "https://dl.neospaceindustries.com/zeno/cli/$(curl -L -s https://dl.neospaceindustries.com/zeno/cli/stable.txt)/zeno_linux_amd64"
+mv zeno_linux_amd64 /usr/local/bin/zeno && chmod +x /usr/local/bin/zeno
+```
+
+### macOS
+
+#### Intel
+
+```
+curl -LO "https://dl.neospaceindustries.com/zeno/cli/$(curl -L -s https://dl.neospaceindustries.com/zeno/cli/stable.txt)/zeno_darwin_amd64"
+mv zeno_darwin_amd64 /usr/local/bin/zeno && chmod +x /usr/local/bin/zeno
+```
+
+#### Apple Silicon
+
+```
+curl -LO "https://dl.neospaceindustries.com/zeno/cli/$(curl -L -s https://dl.neospaceindustries.com/zeno/cli/stable.txt)/zeno_darwin_arm64"
+mv zeno_darwin_arm64 /usr/local/bin/zeno && chmod +x /usr/local/bin/zeno
+```
+
+### Windows
+
+> 说明： 要想找到最新稳定的版本（例如：为了编写脚本），可以看看这里 `https://dl.neospaceindustries.com/zeno/cli/stable.txt`
+
+```
+curl.exe -sLO https://dl.neospaceindustries.com/zeno/cli/v0.0.3/zeno_windows_amd64.exe
+mkdir -p %USERPROFILE%\bin\
+copy zeno_windows_amd64.exe %USERPROFILE%\bin\zeno.exe
+set PATH=%USERPROFILE%\bin\;%PATH%
+```
+
+### 验证安装
+
+执行完成后可通过 `zeno version` 验证是否安装成功。
+
+## 设置拓展功能（可选）
+
+### 启用自动补全功能
+
+zeno 为 Bash、Zsh、Fish 和 PowerShell 提供自动补全功能，可以为你节省大量的输入。
+
+下面是为 Bash、Fish 和 Zsh 设置自动补全功能的操作步骤。请在配置后开启新的 Shell 或者重启当前 Shell 以使设置生效。
+
+#### Bash
+
+补全依赖 [bash-completion](https://github.com/scop/bash-completion) 工具，请先确保已安装。
+
+Linux 请使用下列命令配置
+```
+echo 'source <(zeno completion bash)' >> ~/.bashrc
+```
+
+macOS 请使用下列命令配置
+```
+echo 'source <(zeno completion bash)' >> ~/.bash_profile
+```
+
+#### Zsh
+
+Linux 与 macOS 请使用下列命令配置
+
+```
+zeno completion zsh > "${fpath[1]}/_zeno"
+```
+
+如果你收到 `complete:13: command not found: compdef` 这样的错误提示，那请将下面内容添加到 ~/.zshrc 文件的开头：`autoload -U compinit; compinit`
+
+#### Fish
+
+Linux 与 macOS 请使用下列命令配置
+
+```
+echo 'zeno completion fish | source' >> ~/.config/fish/config.fish
+```
+
+#### PowerShell
+
+
+Windows 请使用下列命令配置
+
+```
+zeno completion powershell >> $PROFILE
+```

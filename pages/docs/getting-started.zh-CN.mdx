@@ -17,47 +17,7 @@ import Callout from "nextra-theme-docs/callout";
 
 ## 安装 Zeno CLI
 
-未来将提供包管理的形式安装和更新。
-
-### Linux
-
-```
-curl -LO "https://dl.neospaceindustries.com/zeno/cli/$(curl -L -s https://dl.neospaceindustries.com/zeno/cli/stable.txt)/zeno_linux_amd64"
-mv zeno_linux_amd64 /usr/local/bin/zeno && chmod +x /usr/local/bin/zeno
-```
-
-### macOS
-
-#### Intel
-
-```
-curl -LO "https://dl.neospaceindustries.com/zeno/cli/$(curl -L -s https://dl.neospaceindustries.com/zeno/cli/stable.txt)/zeno_darwin_amd64"
-mv zeno_darwin_amd64 /usr/local/bin/zeno && chmod +x /usr/local/bin/zeno
-```
-
-#### Apple Silicon
-
-```
-curl -LO "https://dl.neospaceindustries.com/zeno/cli/$(curl -L -s https://dl.neospaceindustries.com/zeno/cli/stable.txt)/zeno_darwin_arm64"
-mv zeno_darwin_arm64 /usr/local/bin/zeno && chmod +x /usr/local/bin/zeno
-```
-
-### Windows
-
-
-> 说明： 要想找到最新稳定的版本（例如：为了编写脚本），可以看看这里 `https://dl.neospaceindustries.com/zeno/cli/stable.txt`
-
-```
-curl.exe -sLO https://dl.neospaceindustries.com/zeno/cli/v0.0.3/zeno_windows_amd64.exe
-mkdir -p %USERPROFILE%\bin\
-copy zeno_windows_amd64.exe %USERPROFILE%\bin\zeno.exe
-set PATH=%USERPROFILE%\bin\;%PATH%
-```
-
-### 验证安装
-
-执行完成后可通过 `zeno version` 验证是否安装成功。
-
+根据 [CLI - 安装与设置](/docs/cli/installation) 文档，安装 Zeno CLI。
 
 ## 注册与登录
 
