@@ -18,7 +18,8 @@
   },
   "blog": {
     "title": "博客",
-    "type": "page"
+    "type": "page",
+    "hidden": true
   },
   "community": {
     "title": "社区",
