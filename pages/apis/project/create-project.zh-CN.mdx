@@ -1,0 +1,116 @@
+---
+title: 获取当前账号信息
+---
+
+import { Metadata, ParamTable } from "components/api"
+
+<Metadata 
+    title="创建项目"
+    verb="POST"
+    path="/v1/project"
+/>
+
+当前自适应配置尚在开发中，因此部分配置项还需手动指定，上线后将极大的简化配置项降低接入成本。
+
+### 请求参数
+
+<ParamTable
+    params={[
+        {
+            key: "name",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+        {
+            key: "spec.link",
+            type: "object",
+            description: "项目与代码仓库的联结关系"
+        },
+        {
+            key: "spec.link.type",
+            type: "string",
+            description: "代码仓库的类型，当前仅可选 github",
+            example: "github"
+        },
+        {
+            key: "spec.link.orgID",
+            type: "string",
+            description: "代码仓库所有者 ID，例如个人用户下的 github 用户 ID，如果是组织用户，则为组织 ID",
+            example: "123"
+        },
+        {
+            key: "spec.link.repoID",
+            type: "string",
+            required: true,
+            description: "代码仓库的 ID",
+            example: "1637072208"
+        },
+        {
+            key: "spec.link.cloneURL",
+            type: "string",
+            description: "代码仓库的克隆地址",
+            example: "https://github.com/acme/acme.git"
+        },
+        {
+            key: "spec.link.branches.production",
+            type: "string",
+            description: "用于构建生产环境的分支名称，多为主分支实际情况可以自行选择",
+            example: "main"
+        },
+        {
+            key: "spec.build.framework",
+            type: "string",
+            description: "选择用于该项目的框架，目前支持的选项有 nodeSSR、nodeSSG、jekyll、hugo、go、static、hexo",
+            example: "nodeSSR"
+        },
+        {
+            key: "spec.build.rootDirectory",
+            type: "string",
+            required: false,
+            description: "使用文件夹名称或者相对路径作为项目的工作目录，默认为根目录",
+            example: "workspace"
+        },
+        {
+            key: "spec.build.buildCommand",
+            type: "string",
+            required: false,
+            description: "构建所使用的命令，可主动传入也可留空，默认值将由所选的框架自动判定",
+            example: "npm run build"
+        },
+        {
+            key: "spec.build.artifactsDirectory",
+            type: "string",
+            required: false,
+            description: "项目可能具有构建产物（例如 nodeSSG 静态编译后的 HTML 等），这些产物将被存储在该目录下以作后续使用，默认值将由所选的框架自动判定",
+            example: "dist"
+        },
+        {
+            key: "spec.build.golang.project",
+            type: "string",
+            required: false,
+            description: "如果框架为 go，未兼容老旧的包管理方式需要使用该项指定项目相对于 `GOPATH/src` 的路径（相关于 import）",
+            example: "dist"
+        },
+        {
+            key: "spec.runtime.servicePort",
+            type: "string",
+            required: false,
+            description: "服务暴露所在的端口，默认 8080",
+            example: "3000"
+        },
+        {
+            key: "spec.runtime.startCommand",
+            type: "string",
+            required: false,
+            description: "启动命令，可主动传入也可留空，默认值将由所选的框架自动判定",
+            example: "npm run start"
+        },
+        {
+            key: "spec.runtime.environments",
+            type: "map[string]string",
+            required: false,
+            description: "启动时所带入的环境变量，默认为空"
+        }
+    ]}
+/>

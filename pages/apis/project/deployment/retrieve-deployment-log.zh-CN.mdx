@@ -1,0 +1,62 @@
+---
+title: 获取部署日志
+---
+
+import { Metadata, ParamTable } from "components/api"
+
+<Metadata 
+    title="获取部署日志"
+    verb="GET"
+    path="/v1/projects/:projectName/deployments/:deploymentID/log"
+/>
+
+### URL 参数
+
+<ParamTable
+    params={[
+        {
+            key: "projectName",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+        {
+            key: "deploymentID",
+            type: "string",
+            description: "部署唯一标示",
+            example: "s0YQZ8tclYFABc5VgZFkt8o9wJh9Rwos"
+        }
+    ]}
+/>
+
+### 返回数据
+
+<ParamTable
+    params={[
+        {
+            key: "",
+            type: "array",
+            description: "按行区分的日志信息，每行一条日志。数据结构请见下方 `LogLine` 结构",
+        },
+    ]}
+/>
+
+### Type · LogLine
+
+
+<ParamTable
+    params={[
+        {
+            key: "time",
+            type: "time",
+            description: "RFC 3339 格式的时间",
+            example: "2022-03-11T18:50:44.498033+08:00"
+        },
+        {
+            key: "content",
+            type: "string",
+            description: "单行的日志内容",
+            example: "Build succeeded"
+        }
+    ]}
+/>

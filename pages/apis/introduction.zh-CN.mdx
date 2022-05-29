@@ -1,0 +1,79 @@
+---
+---
+
+# 前言
+
+所有的 API 暴露在 `https://apis.zeno.so` 上，提供 SSL 加密的 HTTP/1 和 HTTP/2 访问。
+请求和响应内容均以 JSON 序列化使用 UTF-8 编码，请携带 Header `Content-Type: application/json`
+
+## 认证
+
+调用 Zeno API 时需在 HTTP Header 中携带 Token 作为身份认证，该 Token 可在控制台获取。
+
+```
+Authorization: Bearer <TOKEN>
+```
+
+认证失败的请求将会返回 403 状态码，请检查 Token 是否正确发送及有效。
+
+## 返回结构
+
+| 参数 | 说明 |
+|----|-----|
+| `error` 可选 | 当请求失败时，返回错误信息 |
+| `error.message` | 原始错误信息 |
+| `error.class` | 错误类型 |
+| `error.details.localizedMessage.locale` | 错误信息的本地化语言 |
+| `error.details.localizedMessage.message` | 错误信息的本地化内容，可直接用于展示 |
+| `data` | 返回内容的承载字段，根据实际返回内容有所不同。当出现请求失败的时候，可能不会返回该字段。 |
+
+### 结构示例
+
+```
+{
+  "error": {
+    "message": "unsupported auth type",
+    "class": "NOT_IMPLEMENTED",
+    "details": {
+      "localizedMessage": {
+        "locale": "zh-CN",
+        "message": "尚未支持该认证方式"
+      }
+    }
+  },
+  "data": {
+    "id": "evocati",
+    "email": "evocati@zeno.so",
+    "name": "Evocati",
+    "accountSpec": {
+        "ping": "pong"
+    },
+    "createdAt": 1234567890,
+    "updatedAt": 1234567890
+  }
+}
+```
+
+
+## HTTP 头部
+
+
+### 服务限速
+
+我们对每个用户限制了区间内可访问接口的次数，限速相关信息将会在每次请求中返回
+
+| 头部 | 示例 | 说明 |
+|------|-------|----|
+| `X-RateLimit-Limit` | 600  | 用户在区间内可以访问的最大次数 |
+| `X-RateLimit-Remaining` | 599 | 用户在区间内剩余可访问次数 |
+| `X-RateLimit-Reset` | 1653710543 | 访问次数重置的时间戳 |
+
+如果超过了限速，请求将会返回 429 Too Many Requests 状态码。
+
+### 可观察性
+
+| 头部 | 示例 | 说明 |
+|------|-------|-------|
+| `X-Zen-Request-Id` | 9QsEo50xANIh9UBA8Z4Z0ZsIcxI8cV8Y | 请求的唯一标识，用于跟踪请求 |
+| `X-Zen-Response-Time` | 10ms | 服务端请求耗时 |
+| `X-Zen-Version` | testflight-d29db24@d29db24 | 服务端版本号 |

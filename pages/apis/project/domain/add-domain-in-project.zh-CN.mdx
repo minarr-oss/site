@@ -1,0 +1,38 @@
+---
+title: 添加接入域名
+---
+
+import { Metadata, ParamTable } from "components/api"
+
+<Metadata 
+    title="添加接入域名"
+    verb="POST"
+    path="/v1/projects/:projectName/domains"
+/>
+
+### URL 参数
+
+<ParamTable
+    params={[
+        {
+            key: "projectName",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+    ]}
+/>
+
+
+### 请求参数
+
+<ParamTable
+    params={[
+        {
+            key: "name",
+            type: "string",
+            description: "当前将要加入使用的域名，当前不支持泛域",
+            example: "blog.acme.com"
+        },
+    ]}
+/>

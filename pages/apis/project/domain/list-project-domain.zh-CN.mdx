@@ -1,0 +1,24 @@
+---
+title: 获取接入域名列表
+---
+
+import { Metadata, ParamTable } from "components/api"
+
+<Metadata 
+    title="获取接入域名列表"
+    verb="GET"
+    path="/v1/projects/:projectName/domains"
+/>
+
+### URL 参数
+
+<ParamTable
+    params={[
+        {
+            key: "projectName",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+    ]}
+/>

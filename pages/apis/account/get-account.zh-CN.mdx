@@ -1,0 +1,60 @@
+---
+title: 获取当前账号信息
+---
+
+import { Metadata, ParamTable } from "components/api"
+
+<Metadata 
+    title="获取当前账号信息"
+    verb="GET"
+    path="/v1/account"
+/>
+
+### 返回内容
+
+<ParamTable
+    params={[
+        {
+            key: "id",
+            type: "string",
+            required: true,
+            description: "账号唯一标示",
+            example: "pgUcFkhNRQM15cJcBI0BdIwd4k9V0coF"
+        },
+        {
+            key: "email",
+            type: "string",
+            required: true,
+            description: "账号邮箱",
+            example: "evocati@zeno.so"
+        },
+        {
+            key: "name",
+            type: "string",
+            required: true,
+            description: "账号名称",
+            example: "Evocati"
+        },
+        {
+            key: "accountSpec.projectLimit",
+            type: "int",
+            required: true,
+            description: "账号可创建项目数限制",
+            example: "123"
+        },
+        {
+            key: "createdAt",
+            type: "unix timestamp",
+            required: true,
+            description: "创建时间",
+            example: "1637072208"
+        },
+        {
+            key: "updatedAt",
+            type: "unix timestamp",
+            required: true,
+            description: "最后更新时间",
+            example: "1637072208"
+        }
+    ]}
+/>

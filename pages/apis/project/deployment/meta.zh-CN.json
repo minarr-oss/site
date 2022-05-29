@@ -1,0 +1,5 @@
+{
+  "list-deployment": "获取部署列表",
+  "inspect-deployment": "获取指定部署详情",
+  "retrieve-deployment-log": "获取部署日志"
+}

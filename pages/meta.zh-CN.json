@@ -16,6 +16,10 @@
     "title": "更新日志",
     "type": "page"
   },
+  "apis": {
+    "title": "API",
+    "type": "page"
+  },
   "blog": {
     "title": "博客",
     "type": "page",

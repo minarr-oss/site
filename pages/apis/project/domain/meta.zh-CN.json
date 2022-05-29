@@ -1,0 +1,6 @@
+{
+  "list-project-domain": "获取域名列表",
+  "add-domain-in-project": "添加接入域名",
+  "update-project-domain": "更换接入域名",
+  "delete-project-domain": "删除接入域名"
+}

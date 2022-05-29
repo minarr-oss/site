@@ -1,0 +1,85 @@
+---
+title: 获取指定部署详情
+---
+
+import { Metadata, ParamTable } from "components/api"
+
+<Metadata 
+    title="获取指定部署详情"
+    verb="GET"
+    path="/v1/projects/:projectName/deployments/:deploymentID"
+/>
+
+### URL 参数
+
+<ParamTable
+    params={[
+        {
+            key: "projectName",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+        {
+            key: "deploymentID",
+            type: "string",
+            description: "部署唯一标示",
+            example: "s0YQZ8tclYFABc5VgZFkt8o9wJh9Rwos"
+        }
+    ]}
+/>
+
+### 返回数据
+
+<ParamTable
+    params={[
+        {
+            key: "id",
+            type: "string",
+            description: "部署唯一标示",
+            example: "s0YQZ8tclYFABc5VgZFkt8o9wJh9Rwos"
+        },
+        {
+            key: "projectID",
+            type: "string",
+            description: "项目唯一标识",
+            example: "s0YQZ8tclYFABc5VgZFkt8o9wJh9Rwos"
+        },
+        {
+            key: "revision",
+            type: "string",
+            description: "版本号",
+            example: "suq81hsgq"
+        },
+        {
+            key: "creatorID",
+            type: "string",
+            description: "部署触发账号唯一标识",
+            example: "s0YQZ8tclYFABc5VgZFkt8o9wJh9Rwos"
+        },
+        {
+            key: "createdAt",
+            type: "unix timestamp",
+            description: "部署创建时间",
+            example: "12345678910"
+        },
+        {
+            key: "buildAt",
+            type: "unix timestamp",
+            description: "构建时间",
+            example: "12345678910"
+        },
+        {
+            key: "deployAt",
+            type: "unix timestamp",
+            description: "部署时间",
+            example: "12345678910"
+        },
+        {
+            key: "readyAt",
+            type: "unix timestamp",
+            description: "就绪时间",
+            example: "12345678910"
+        }
+    ]}
+/>

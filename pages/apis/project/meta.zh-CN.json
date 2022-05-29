@@ -1,0 +1,10 @@
+{
+  "create-project": "创建项目",
+  "get-project": "获取项目",
+  "delete-project": "删除项目",
+  "list-project": "获取项目列表",
+  "update-project": "更新项目设置",
+  "deploy": "触发部署",
+  "domain": "域名",
+  "deployment": "部署"
+}

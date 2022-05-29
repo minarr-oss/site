@@ -1,0 +1,30 @@
+---
+title: 删除接入域名
+---
+
+import { Metadata, ParamTable } from "components/api"
+
+<Metadata 
+    title="删除接入域名"
+    verb="DELETE"
+    path="/v1/projects/:projectName/domains/:domain"
+/>
+
+### URL 参数
+
+<ParamTable
+    params={[
+        {
+            key: "projectName",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+        {
+            key: "domain",
+            type: "string",
+            description: "被删除域名",
+            example: "acme.com"
+        },
+    ]}
+/>

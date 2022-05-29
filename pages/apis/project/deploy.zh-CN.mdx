@@ -1,0 +1,24 @@
+---
+title: 触发部署
+---
+
+import { Metadata, ParamTable } from "components/api"
+
+<Metadata 
+    title="触发部署"
+    verb="POST"
+    path="/v1/projects/:projectName/deployment"
+/>
+
+### URL 参数
+
+<ParamTable
+    params={[
+        {
+            key: "projectName",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+    ]}
+/>

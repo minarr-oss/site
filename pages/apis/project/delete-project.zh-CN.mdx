@@ -1,0 +1,29 @@
+---
+title: 删除项目
+---
+
+import { Metadata, ParamTable } from "components/api"
+import Callout from "nextra-theme-docs/callout";
+
+<Metadata 
+    title="删除项目"
+    verb="DELETE"
+    path="/v1/projects/:projectName"
+/>
+
+<Callout emoji="⚠️">
+    删除操作不可逆，请谨慎操作。
+</Callout>
+
+### URL 参数
+
+<ParamTable
+    params={[
+        {
+            key: "projectName",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+    ]}
+/>

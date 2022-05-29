@@ -1,0 +1,85 @@
+---
+title: 更新项目设置
+---
+
+import { Metadata, ParamTable } from "components/api"
+
+<Metadata 
+    title="更新项目设置"
+    verb="PUT"
+    path="/v1/projects/:projectName"
+/>
+
+### URL 参数
+
+<ParamTable
+    params={[
+        {
+            key: "projectName",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+    ]}
+/>
+
+
+### 请求参数
+
+<ParamTable
+    params={[
+        {
+            key: "name",
+            type: "string",
+            description: "项目名称",
+            example: "blog"
+        },
+        {
+            key: "spec.build.framework",
+            type: "string",
+            description: "选择用于该项目的框架，目前支持的选项有 nodeSSR、nodeSSG、jekyll、hugo、go、static、hexo",
+            example: "nodeSSR"
+        },
+        {
+            key: "spec.build.rootDirectory",
+            type: "string",
+            description: "使用文件夹名称或者相对路径作为项目的工作目录，默认为根目录",
+            example: "workspace"
+        },
+        {
+            key: "spec.build.buildCommand",
+            type: "string",
+            description: "构建所使用的命令，可主动传入也可留空，默认值将由所选的框架自动判定",
+            example: "npm run build"
+        },
+        {
+            key: "spec.build.artifactsDirectory",
+            type: "string",
+            description: "项目可能具有构建产物（例如 nodeSSG 静态编译后的 HTML 等），这些产物将被存储在该目录下以作后续使用，默认值将由所选的框架自动判定",
+            example: "dist"
+        },
+        {
+            key: "spec.build.golang.project",
+            type: "string",
+            description: "如果框架为 go，未兼容老旧的包管理方式需要使用该项指定项目相对于 `GOPATH/src` 的路径（相关于 import）",
+            example: "dist"
+        },
+        {
+            key: "spec.runtime.servicePort",
+            type: "string",
+            description: "服务暴露所在的端口，默认 8080",
+            example: "3000"
+        },
+        {
+            key: "spec.runtime.startCommand",
+            type: "string",
+            description: "启动命令，可主动传入也可留空，默认值将由所选的框架自动判定",
+            example: "npm run start"
+        },
+        {
+            key: "spec.runtime.environments",
+            type: "map[string]string",
+            description: "启动时所带入的环境变量，默认为空"
+        }
+    ]}
+/>
