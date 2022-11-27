@@ -3,5 +3,6 @@
   "jekyll": "Jekyll",
   "node-ssg": "Node.js 服务端生成",
   "node-ssr": "Node.js 服务端渲染",
-  "static": "静态页面"
+  "static": "静态页面",
+  "wild": "通用应用"
 }

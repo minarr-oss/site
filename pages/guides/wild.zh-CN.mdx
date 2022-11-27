@@ -1,0 +1,35 @@
+---
+---
+
+# 部署通用应用
+
+对于某些不便于在 Zeno 上构建或者尚未支持的应用构建框架，例如 Rust、C++ 应用等等均可以通过「通用应用」发布到 Zeno 上。
+
+## 开始创建
+
+> 假设下方有一个 Rust HTTP HelloWold 的应用，在本地构建后丢到 Git LFS，当然可以通过 Build Command 从其他地方下载这个 binary 等等。下方以二进制存放于代码仓库为示例
+
+使用 `zeno create` 创建新应用，选择你的应用仓库，而后选择使用 `Wild` 进行部署。
+
+接下来会遇到三个配置分配是：
+
+- Root Directory 工作目录：构建时所使用的代码仓库中的子目录，如果你根目录即为应用内容那么使用默认值即可。
+- Build Command 构建命令（可选，默认不执行）：某些前置准备的构建命令，比如将所需要的二进制文件或者配置规整到某一个目录给后续传入运行时使用
+- Artifacts Directory 产物目录（可选，默认为 Root Directory）：如果代码仓库中有大量运行时不必须文件，可以通过此配置指定只传递到运行时的目录。
+
+填写完毕后提交创建即可。大致流程如下
+
+```
+$ zeno create
+✔ zenohq / Zeno
+✔ examples
+Selected repository zenohq/examples to create new project
+Name your new project: example-wild
+✔ Wild / Copy or making things from your repository and run it
+Root Directory: ./rust-hello-wold-api
+Build Command: mkdir artifacts; cp ./rust-hello-wold-api/server artifacts
+Artifacts Directory: artifacts
+Start command: ./server --listen :2333
+Service port: 2333
+Project created, with name `example-wild`
+```
