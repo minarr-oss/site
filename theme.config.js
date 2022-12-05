@@ -158,7 +158,7 @@ export default {
             <span className="mr-2">
               <NSI />
             </span>
-            <span className="text-xs font-normal">© Blackhole Inc.</span>
+            <span className="text-xs font-normal">© Verse Ltd.</span>
           </a>
         );
     }
